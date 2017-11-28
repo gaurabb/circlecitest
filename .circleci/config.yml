@@ -11,7 +11,7 @@ jobs:
             command: 'gem cert --add <(curl -Ls https://raw.githubusercontent.com/thesp0nge/dawnscanner/master/certs/paolo_at_dawnscanner_dot_org.pem)'
        - run:
             name: Install Dawnscanner
-            command: 'gem install dawnscanner -P MediumSecurity'
+            command: 'gem install dawnscanner'
        - run:
             name: Run Dawnscanner
             command: 'dawn .'
