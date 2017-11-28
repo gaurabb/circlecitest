@@ -1,8 +1,17 @@
 version: 2
 jobs:
    build:
+     working-directory: ~/circlecitest
      docker:
        - image: circleci/ruby:2.3.4
      steps:
        - checkout
-       - run: dawn railsgoat/
+       - run:
+            name: Install Dawnscanner certificate
+            command: 'gem cert --add <(curl -Ls https://raw.githubusercontent.com/thesp0nge/dawnscanner/master/certs/paolo_at_dawnscanner_dot_org.pem)'
+       - run:
+            name: Install Dawnscanner
+            command: 'gem install dawnscanner -P MediumSecurity'
+       - run:
+            name: Run Dawnscanner
+            command: 'dawn .'
