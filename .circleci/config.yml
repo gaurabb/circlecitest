@@ -17,4 +17,4 @@ jobs:
             command: 'gem install dawnscanner'
        - run:
             name: Run Dawnscanner
-            #command: 'dawn ~/circlecitest'
+            command: 'echo Done' #'dawn ~/circlecitest'
