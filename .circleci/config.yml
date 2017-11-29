@@ -18,7 +18,7 @@ jobs:
           command: 'gem install dawnscanner'
        - run:
           name: Run Dawnscanner
-          command: 'dawn -F scanresult/ railsgoat/'
+          command: 'dawn railsgoat/'
 test:
   post:
     - mkdir $CIRCLE_ARTIFACTS/scan_output
