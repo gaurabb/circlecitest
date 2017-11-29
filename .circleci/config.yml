@@ -4,8 +4,6 @@ jobs:
      docker:
        - image: circleci/ruby:2.3.4
      steps:
-       - checkout
-       - run: echo "hello world"
        - run:
           name: Get PWD
           command:  'ls -l'
@@ -21,6 +19,7 @@ jobs:
        - run:
           name: Run Dawnscanner
           command: 'dawn -F scanresult/ railsgoat/'
-       - run:
-          name: View results
-          command: 'cat $CIRCLE_ARTIFACTS'
+test:
+  post:
+    - mkdir $CIRCLE_ARTIFACTS/scan_output
+    - mv home/circleci/dawnscanner/results/railsgoat/*/summary.txt created $CIRCLE_ARTIFACTS/scan_output
