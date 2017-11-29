@@ -6,13 +6,7 @@ jobs:
      steps:
        - run:
           name: Get PWD
-          command:  'ls -l'
-       - run:
-          name: Check CIRCLE_ARTIFACTS
-          command: echo $CIRCLE_ARTIFACTS
-       - run:
-          name: Install Dawnscanner certificate
-          command: 'gem cert --add <(curl -Ls https://raw.githubusercontent.com/thesp0nge/dawnscanner/master/certs/paolo_at_dawnscanner_dot_org.pem)'
+          command:  'pwd'
        - run:
           name: Install Dawnscanner
           command: 'gem install dawnscanner'
