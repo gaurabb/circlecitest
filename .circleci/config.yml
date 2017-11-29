@@ -8,6 +8,9 @@ jobs:
           name: Get PWD
           command:  'pwd'
        - run:
+          name: List Files
+          command: 'ls -l'
+       - run:
           name: Install Dawnscanner
           command: 'gem install dawnscanner'
        - run:
