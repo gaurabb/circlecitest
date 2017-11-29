@@ -1,7 +1,7 @@
 version: 2
         jobs:
                 build:
-                working-directory: circlecitest
+                  working-directory: circlecitest
                 docker:
                         - image: circleci/ruby:2.3.4
                 steps:
@@ -24,7 +24,5 @@ version: 2
                         - run:
                                 name: View results
                                 command: 'cat $CIRCLE_ARTIFACTS'
-                post:
-                - mkdir $CIRCLE_ARTIFACTS/scan_output
-                - mv home/circleci/dawnscanner/results/railsgoat/*/summary.txt $CIRCLE_ARTIFACTS/scan_output
+  
      
