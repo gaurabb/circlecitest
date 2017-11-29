@@ -5,7 +5,7 @@ jobs:
      docker:
        - image: circleci/ruby:2.3.4
      environment:
-          CIRCLE_ARTIFACTS: /home/circleci/dawnscanner/results/railsgoat/20171128/
+          CIRCLE_ARTIFACTS: /home/circleci/
      steps:
        - checkout
        - run:
