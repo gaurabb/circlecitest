@@ -1,12 +1,11 @@
 version: 2
     jobs:
       build:
-        working-directory: ~/circlecitest
         docker:
           - image: circleci/ruby:2.3.4
         steps:
           - checkout
           - run:
-            name: Get PWD
-            command:  'ls -l'
+              name: Get PWD
+              command:  'ls -l'
      
