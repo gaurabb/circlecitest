@@ -13,7 +13,3 @@ jobs:
        - run:
           name: Run Dawnscanner
           command: 'dawn railsgoat/'
-test:
-  post:
-    - mkdir $CIRCLE_ARTIFACTS/scan_output
-    - mv home/circleci/dawnscanner/results/railsgoat/*/summary.txt created $CIRCLE_ARTIFACTS/scan_output
