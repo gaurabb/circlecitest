@@ -1,28 +1,28 @@
 version: 2
-  jobs:
-    build:
-      working-directory: circlecitest
-      docker:
+    jobs:
+        build:
+            working-directory: circlecitest
+            docker:
               - image: circleci/ruby:2.3.4
-      steps:
+            steps:
               - checkout
               - run:
-                      name: Get PWD
-                      command:  'ls -l'
+                name: Get PWD
+                command:  'ls -l'
               - run:
-                      name: Check CIRCLE_ARTIFACTS
-                      command: echo $CIRCLE_ARTIFACTS
+                name: Check CIRCLE_ARTIFACTS
+                command: echo $CIRCLE_ARTIFACTS
               - run:
-                      name: Install Dawnscanner certificate
-                      command: 'gem cert --add <(curl -Ls https://raw.githubusercontent.com/thesp0nge/dawnscanner/master/certs/paolo_at_dawnscanner_dot_org.pem)'
+                name: Install Dawnscanner certificate
+                command: 'gem cert --add <(curl -Ls https://raw.githubusercontent.com/thesp0nge/dawnscanner/master/certs/paolo_at_dawnscanner_dot_org.pem)'
               - run:
-                      name: Install Dawnscanner
-                      command: 'gem install dawnscanner'
+                name: Install Dawnscanner
+                command: 'gem install dawnscanner'
               - run:
-                      name: Run Dawnscanner
-                      command: 'dawn -F scanresult/ railsgoat/'
+                name: Run Dawnscanner
+                command: 'dawn -F scanresult/ railsgoat/'
               - run:
-                      name: View results
-                      command: 'cat $CIRCLE_ARTIFACTS'
+                name: View results
+                command: 'cat $CIRCLE_ARTIFACTS'
 
      
