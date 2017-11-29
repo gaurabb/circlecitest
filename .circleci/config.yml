@@ -1,12 +1,13 @@
 version: 2
 jobs:
    build:
-     do$cker:
+     docker:
        - image: circleci/ruby:2.3.4
      steps:
+       - checkout
        - run:
           name: Get PWD
-          command:  'pwd'
+          command: 'pwd'
        - run:
           name: List Files
           command: 'ls -l'
