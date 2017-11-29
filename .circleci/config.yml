@@ -24,7 +24,7 @@ jobs:
        - run:
             name: View results
             command: 'cat $CIRCLE_ARTIFACTS'
-    post:
-        - mkdir $CIRCLE_ARTIFACTS/scan_output
-        - mv home/circleci/dawnscanner/results/railsgoat/*/summary.txt $CIRCLE_ARTIFACTS/scan_output
+      post:
+          - mkdir $CIRCLE_ARTIFACTS/scan_output
+          - mv home/circleci/dawnscanner/results/railsgoat/*/summary.txt $CIRCLE_ARTIFACTS/scan_output
      
