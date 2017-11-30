@@ -1,33 +1,25 @@
 version: 2
 jobs:
-   build:
-     docker:
-       - image: circleci/ruby:2.3.4
-     steps:
-       - checkout
-       - run:
-          name: Get PWD
-          command: 'pwd'
-       - run:
-          name: List Files
-          command: 'ls -l'
-       - run:
-          name: Install Dawnscanner
-          command: 'gem install dawnscanner'
    test:
      docker:
        - image: circleci/ruby:2.3.4
      steps:
        - checkout
        - run:
+          name: Install Dawnscanner
+          command: 'gem install dawnscanner'
+       - run:
           name: Run Dawnscanner
           command: 'dawn railsgoat/'
        - run:
-          name: Create artifact directory
-          command: 'sudo mkdir $CIRCLE_ARTIFACTS/scan_result'
+          name: Display scan summary
+          command: 'sudo cat /home/circleci/dawnscanner/results/railsgoat/*/summary.txt'
        - run:
-          name: Copy scan result to artifact directory
-          command: 'sudo mv /home/circleci/dawnscanner/results/railsgoat/*/summary.txt $CIRCLE_ARTIFACTS/scan_result'
+          name: Display scan details
+          command: 'sudo cat /home/circleci/dawnscanner/results/railsgoat/*/statistics.txt'
+       - run:
+          name: Display third party scan details
+          command: 'sudo cat /home/circleci/dawnscanner/results/railsgoat/*/third_party_vulnerabilities.txt'
 workflows:
  version: 2
  build_and_test:
