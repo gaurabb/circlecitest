@@ -19,7 +19,7 @@ jobs:
           command: 'dawn railsgoat/'
        - run:
           name: Create artifact directory
-          command: 'mkdir $CIRCLE_ARTIFACTS/scan_result'
+          command: 'sudo mkdir $CIRCLE_ARTIFACTS/scan_result'
        - run:
           name: Copy scsan result to artifact directory
           command: 'mv /home/circleci/dawnscanner/results/railsgoat/20171129/summary.txt $CIRCLE_ARTIFACTS/scan_result'
