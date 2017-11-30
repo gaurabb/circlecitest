@@ -28,11 +28,11 @@ jobs:
        - run:
           name: Copy scan result to artifact directory
           command: 'sudo mv /home/circleci/dawnscanner/results/railsgoat/*/summary.txt $CIRCLE_ARTIFACTS/scan_result'
-   workflows:
-     version: 2
-     build_and_test:
-      jobs:
-        - build
-        - test:
-           requires:
-             - build
+workflows:
+ version: 2
+ build_and_test:
+  jobs:
+    - build
+    - test:
+       requires:
+         - build
