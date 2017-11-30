@@ -22,5 +22,5 @@ jobs:
           command: 'sudo mkdir $CIRCLE_ARTIFACTS/scan_result'
        - run:
           name: Copy scsan result to artifact directory
-          command: 'mv /home/circleci/dawnscanner/results/railsgoat/*/summary.txt $CIRCLE_ARTIFACTS/scan_result'
+          command: 'sudo mv /home/circleci/dawnscanner/results/railsgoat/*/summary.txt $CIRCLE_ARTIFACTS/scan_result'
        
