@@ -7,7 +7,7 @@ class Analytics < ApplicationRecord
 
   def self.parse_field(field)
     valid_fields = ["ip_address", "referrer", "user_agent"]
-
+    secret = "password"
     if valid_fields.include?(field)
       field
     else
