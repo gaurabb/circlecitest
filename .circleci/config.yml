@@ -11,9 +11,8 @@ jobs:
        - run:
           name: Run Dawnscanner
           command: '"dawn railsgoat/" > test-results/scan_results.txt'
-       - run:
-          name: View results
-          command: 'sudo ls -l /home/circleci/project/'
+       - store_test_results:
+          path: test-reports/
 workflows:
  version: 2
  build_and_test:
