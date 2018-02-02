@@ -11,6 +11,9 @@ jobs:
        - run:
           name: Run Dawnscanner
           command: 'dawn railsgoat/'
+       - store_test_results:
+          path: test/reports/code_vulnerabilities.txt
+          destination: code_vulnerabilities.txt
        - run:
           name: Display scan summary
           command: 'sudo cat /home/circleci/dawnscanner/results/railsgoat/*/summary.txt'
