@@ -10,7 +10,8 @@ jobs:
           command: 'gem install dawnscanner'
        - run:
           name: Run Dawnscanner
-          command: 'dawn railsgoat/'
+          command: |
+            'dawn railsgoat/' test
        - store_test_results:
           path: test-reports/
 workflows:
