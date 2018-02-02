@@ -10,7 +10,7 @@ jobs:
           command: 'gem install dawnscanner'
        - run:
           name: Run Dawnscanner
-          command: 'dawn railsgoat/'
+          command: 'dawn railsgoat/ > test-reports/dawnscanner_results.txt'
        - run:
           name: Display scan summary
           command: 'sudo cat /home/circleci/dawnscanner/results/railsgoat/*/summary.txt'
