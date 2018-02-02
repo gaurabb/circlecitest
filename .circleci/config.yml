@@ -10,7 +10,7 @@ jobs:
           command: 'gem install dawnscanner'
        - run:
           name: Run Dawnscanner
-          command: 'dawn railsgoat/ -F dawnscanner_results.txt'
+          command: '"dawn railsgoat/" > test-results/scan_results.txt'
        - run:
           name: View results
           command: 'sudo ls -l /home/circleci/project/'
