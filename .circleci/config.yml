@@ -11,15 +11,6 @@ jobs:
        - run:
           name: Run Dawnscanner
           command: 'dawn railsgoat/ -o test-reports/dawnscanner_results.txt'
-       - run:
-          name: Display scan summary
-          command: 'sudo cat /home/circleci/dawnscanner/results/railsgoat/*/summary.txt'
-       - run:
-          name: Display scan details
-          command: 'sudo cat /home/circleci/dawnscanner/results/railsgoat/*/statistics.txt'
-       - run:
-          name: Display third party scan details
-          command: 'sudo cat /home/circleci/dawnscanner/results/railsgoat/*/third_party_vulnerabilities.txt'
        - store_artifacts:
           path: test-reports/
           destination: tr1
