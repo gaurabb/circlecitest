@@ -10,8 +10,7 @@ jobs:
           command: 'gem install dawnscanner'
        - run:
           name: Run Dawnscanner
-          command: |
-            'dawn railsgoat/'
+          command: 'dawn railsgoat/'
        - store_test_results:
           path: '/home/circleci/dawnscanner/results/railsgoat/*/third_party_vulnerabilities.txt'
 workflows:
