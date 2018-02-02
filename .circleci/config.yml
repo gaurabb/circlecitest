@@ -13,7 +13,7 @@ jobs:
           command: 'dawn railsgoat/ -F /home/circleci/project/dawnscanner_results.txt'
        - run:
           name: View results
-          command: 'sudo cat /home/circleci/project/dawnscanner_results.txt'
+          command: 'sudo ls -l /home/circleci/project/'
 workflows:
  version: 2
  build_and_test:
