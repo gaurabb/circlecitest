@@ -13,7 +13,7 @@ jobs:
           command: 'dawn railsgoat/'
        - run:
           name: Setup results
-          command: 'sudo cp /home/circleci/dawnscanner/results/railsgoat/*/third_party_vulnerabilities.txt test-reports/'
+          command: 'sudo cp /home/circleci/dawnscanner/results/railsgoat/*/third_party_vulnerabilities.txt /test-reports'
        - store_test_results:
           path: test-reports/
 workflows:
