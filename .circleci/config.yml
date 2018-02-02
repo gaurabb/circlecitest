@@ -11,18 +11,8 @@ jobs:
        - run:
           name: Run Dawnscanner
           command: 'dawn railsgoat/'
-       - run:
-          name: Display scan summary
-          command: 'sudo cat /home/circleci/dawnscanner/results/railsgoat/*/summary.txt'
-       - run:
-          name: Display scan details
-          command: 'sudo cat /home/circleci/dawnscanner/results/railsgoat/*/statistics.txt'
-       - run:
-          name: Check if there are vulnerabilities
-          command: 'test -f /home/circleci/dawnscanner/results/railsgoat/*/third_party_vulnerabilities.txt && echo "There are vulnerabilities in your code. Please review the results." || echo "No vulnerabilities detected. Good job!" '
        - store_test_results:
-          path: /home/circleci/dawnscanner/results/railsgoat/*/third_party_vulnerabilities.txt
-          destination: code_vulnerabilities.txt
+          path: test/reports
 workflows:
  version: 2
  build_and_test:
