@@ -4,8 +4,6 @@ jobs:
      pre:
        docker:
          - image: circleci/ruby:2.3.4
-       steps:
-         - checkout
      post:
        - case $CIRCLE_NODE_INDEX in 0) ./script/dawnscanner ;; esac:
            parallel: true
