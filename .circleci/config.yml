@@ -13,6 +13,9 @@ jobs:
        - run:
           name: Run Dawnscanner
           command: 'dawn --exit-on-warn railsgoat/'
+   post:
+    - case $CIRCLE_NODE_INDEX in 0) ./script/brakeman ;; esac:
+           parallel: true
 workflows:
  version: 2
  build_and_test:
