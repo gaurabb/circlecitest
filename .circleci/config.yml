@@ -13,8 +13,8 @@ jobs:
        - run:
           name: Run Dawnscanner
           command: 'dawn railsgoat/'
-     post:
-       - sudo ls -l 
+   post:
+    - sudo ls -l 
 workflows:
  version: 2
  build_and_test:
