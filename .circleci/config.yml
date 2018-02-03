@@ -10,7 +10,7 @@ jobs:
             name: Install Dawnscanner
             command: 'gem install dawnscanner'
         - run:
-            name: Run Dawnscanner
+            name: Run Dawnscanner Again
             command: 'dawn railsgoat/'
     post:
       - sudo cat /home/circleci/dawnscanner/results/railsgoat/*/third_party_vulnerabilities.txt  
