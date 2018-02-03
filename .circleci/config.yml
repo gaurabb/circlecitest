@@ -13,7 +13,7 @@ jobs:
             name: Run Dawnscanner
             command: 'dawn railsgoat/'
     post:
-      - sudo cat /home/circleci/dawnscanner/results/railsgoat/20180203/third_party_vulnerabilities.txt  
+      - sudo cat /home/circleci/dawnscanner/results/railsgoat/*/third_party_vulnerabilities.txt  
 workflows:
   version: 2
   build_and_test:
