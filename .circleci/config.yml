@@ -1,9 +1,10 @@
 version: 2
 jobs:
    test:
-     docker:
+     pre:
+      docker:
        - image: circleci/ruby:2.3.4
-     steps:
+      steps:
        - checkout
        - run:
           name: Install Dawnscanner
