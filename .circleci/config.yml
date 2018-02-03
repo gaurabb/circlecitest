@@ -1,12 +1,13 @@
 version: 2
 jobs:
    test:
-     docker:
-       - image: circleci/ruby:2.3.4
-     steps:
-       - checkout
+     pre:
+       docker:
+         - image: circleci/ruby:2.3.4
+       steps:
+         - checkout
      post:
-       - case $CIRCLE_NODE_INDEX in 0) ./script/brakeman ;; esac:
+       - case $CIRCLE_NODE_INDEX in 0) ./script/dawnscanner ;; esac:
            parallel: true
 workflows:
  version: 2
