@@ -12,7 +12,7 @@ jobs:
           path: test-reports/
        - run:
           name: Run Dawnscanner
-          command: 'dawn --exit-on-warn railsgoat/'
+          command: 'dawn railsgoat/'
      post:
        - sudo ls -l 
 workflows:
