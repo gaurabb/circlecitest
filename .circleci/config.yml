@@ -4,6 +4,11 @@ jobs:
      pre:
        docker:
          - image: circleci/ruby:2.3.4
+       steps:
+       - checkout
+       - run:
+          name: Install Dawnscanner
+          command: 'gem install dawnscanner'
      post:
        - case $CIRCLE_NODE_INDEX in 0) ./script/dawnscanner ;; esac:
            parallel: true
