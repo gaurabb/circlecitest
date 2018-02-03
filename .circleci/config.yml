@@ -1,16 +1,20 @@
 version: 2
 jobs:
-  test:
-    pre:
-      docker:
-        - image: circleci/ruby:2.3.4
-      steps:
-        - checkout
-        - run:
-            name: Install Dawnscanner
-            command: 'gem install dawnscanner'
+   test:
+     docker:
+       - image: circleci/ruby:2.3.4
+     steps:
+       - checkout
+       - run:
+          name: Install Dawnscanner
+          command: 'gem install dawnscanner'
+       - store_test_results:
+          path: test-reports/
+       - run:
+          name: Run Dawnscanner
+          command: 'dawn --exit-on-warn railsgoat/'
 workflows:
-  version: 2
-  build_and_test:
+ version: 2
+ build_and_test:
   jobs:
     - test 
