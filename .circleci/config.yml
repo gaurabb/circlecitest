@@ -1,23 +1,18 @@
 version: 2
 jobs:
-   test:
-     docker:
-       - image: circleci/ruby:2.3.4
-     steps:
-       - checkout
-       - run:
-          name: Install Dawnscanner
-          command: 'gem install dawnscanner'
-       - store_test_results:
-          path: test-reports/
-       - run:
-          name: Run Dawnscanner
-          command: 'dawn --exit-on-warn railsgoat/'
-   post:
-    - case $CIRCLE_NODE_INDEX in 0) ./script/brakeman ;; esac:
-           parallel: true
+  test:
+    docker:
+      - { image: 'circleci/ruby:2.3.4' }
+    steps:
+      - checkout
+      - { run: { name: 'Install Dawnscanner', command: 'gem install dawnscanner' } }
+      - { store_test_results: { path: test-reports/ } }
+      - { run: { name: 'Run Dawnscanner', command: 'dawn --exit-on-warn railsgoat/' } }
+  post:
+    -
+      'case $CIRCLE_NODE_INDEX in 0) ./script/dawnscanner ;; esac': { parallel: true }
 workflows:
- version: 2
- build_and_test:
-  jobs:
-    - test 
+  version: 2
+  build_and_test:
+    jobs:
+      - test
