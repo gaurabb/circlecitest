@@ -5,7 +5,7 @@ gem 'rails', '5.1.4'
 
 ruby '2.4.2'
 
-gem 'rake'
+gem 'rake', '>= 12.3.3'
 gem 'rails-perftest'
 gem 'ruby-prof'
 
@@ -32,7 +32,7 @@ group :development, :mysql do
   gem 'travis-lint'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'rubocop'
+  gem 'rubocop', '>= 0.51.0'
 end
 
 gem 'simplecov', :require => false, :group => :test
@@ -42,7 +42,7 @@ group :development, :test, :mysql do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'poltergeist'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 3.6.1'
   gem 'test-unit'
 end
 
@@ -52,16 +52,16 @@ end
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'sass-rails'
-gem 'coffee-rails'
-gem 'jquery-fileupload-rails'
+gem 'sass-rails', '>= 5.0.6'
+gem 'coffee-rails', '>= 4.2.2'
+gem 'jquery-fileupload-rails', '>= 0.4.7'
 gem 'uglifier'
 gem 'turbolinks'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', :platforms => :ruby
 
-gem 'jquery-rails'
+gem 'jquery-rails', '>= 4.3.1'
 
 # To use ActiveModel has_secure_password
  gem 'bcrypt'
@@ -87,6 +87,6 @@ gem 'therubyracer'
 #end
 
 #For Rails 4.2
-gem 'responders'
+gem 'responders', '>= 2.4.0'
 
 gem "minitest"
